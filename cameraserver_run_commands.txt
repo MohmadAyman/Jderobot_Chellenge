@@ -1,0 +1,2 @@
+./cameraserver /home/mh/JdeRobot/src/drivers/cameraserver/cameraserver.cfg 
+./cameraview /home/mh/JdeRobot/src/tools/cameraview/cameraview.cfg 
