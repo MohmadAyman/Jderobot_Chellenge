@@ -1,0 +1,45 @@
+ 1750  git clone http://github.com/JdeRobot/JdeRobot.git
+ 1751  cd JdeRobot/
+ 1752  mkdir build && cd build
+ 1753  cmake .
+ 1754  cmake ..
+ 1755  sudo apt install libgsl2 gsl-bin libgsl-dev
+ 1756  cmake ..
+ 1757  sudo apt install libgoocanvasmm-2.0-6 libgoocanvasmm-2.0-dev
+ 1758  cmake ..
+ 1759  sudo apt install libgtk2.0-0 libgtk2.0-bin libgtk2.0-cil libgtk2.0-common libgtk2.0-dev libgtkgl2.0-1
+ 1760  cmake ..sudo apt install libgtkgl2.0-dev libgtkglext1 libgtkglext1-dev libglademm-2.4-dev libgtkmm-2.4-dev 
+ 1761  sudo apt install libgtkgl2.0-dev libgtkglext1 libgtkglext1-dev libglademm-2.4-dev libgtkmm-2.4-dev 
+ 1762  sudo apt install libgnomecanvas2-0 libgnomecanvas2-dev  libgtkglext1-doc libgnomecanvasmm-2.6-dev
+ 1763  sudo apt install libgnomecanvasmm-2.6-1v5 libgtkglextmm-x11-1.2-0v5 libgtkglextmm-x11-1.2-dev
+ 1764  cmake ..
+ 1765  sudo apt-get install libzeroc-ice3.6 zeroc-ice-utils libzeroc-icestorm3.6 zeroc-ice-slice libzeroc-ice-dev
+ 1766  cmake ..
+ 1767  sudo apt install libxml++2.6-2v5 libxml++2.6-dev libtinyxml-dev
+ 1768  cmake ..
+ 1769  make 
+ 1770  sudo sh -c 'cat<<EOF>/etc/apt/sources.list.d/jderobot.list
+ 1771  # for ubuntu 16.04 LTS (64 bit)
+ 1772  deb http://jderobot.org/apt xenial main
+ 1773  deb-src http://jderobot.org/apt xenial main
+ 1774  EOF'
+ 1775  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv B0E7F58E82C8091DF945A0453DA08892EE69A25C
+ 1776  sudo apt update
+ 1777  make 
+ 1778  cmake ..
+ 1779  sudo apt install ros-kinetic-roscpp ros-kinetic-std-msgs ros-kinetic-cv-bridge ros-kinetic-image-transport ros-kinetic-roscpp-core ros-kinetic-rospy ros-kinetic-nav-msgs ros-kinetic-geometry-msgs
+ 1780  y
+ 1781  sudo apt install ros-kinetic-roscpp ros-kinetic-std-msgs ros-kinetic-cv-bridge ros-kinetic-image-transport ros-kinetic-roscpp-core ros-kinetic-rospy ros-kinetic-nav-msgs ros-kinetic-geometry-msgs
+ 1782  make 
+ 1783  sudo apt install ros-kinetic-xmlrpcpp 
+ 1784  make 
+ 1786  sudo apt install ros-kinetic-sophus*
+ 1787  make 
+ 1788  sudo apt remove ros-kinetic-sophus
+ 1789  make 
+ 1790  sudo apt install ros-kinetic-sophus
+ 1791  make 
+ 1792  sudo make install
+ 1793  cat /usr/local/share/jderobot/gazebo/gazebo-setup.sh >> ~/.bashrc 
+ 1794  echo "source /opt/ros/kinetic/setup.bash"
+ 1795  source ~/.bashrc
