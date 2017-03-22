@@ -36,7 +36,6 @@ def apply_rules(pattern):
 	new_pattern = np.array(pattern)
 	rows = new_pattern.shape[0]
 	cols = new_pattern.shape[1]
-	print(rows-2)
 	for x in range(rows-2):
 		for y in range(cols-2):
 			# print(new_pattern)
@@ -51,7 +50,9 @@ def apply_rules(pattern):
 				if(num_nagbours(pattern,x+1,y+1)==3):
 					new_pattern[x+1][y+1]=1
 			# print(new_pattern)
-	print(new_pattern)
+	for x in range(rows-2):
+		print(new_pattern[x+1][1:-1])
+
 	return new_pattern
 
 
@@ -68,6 +69,12 @@ if __name__ == '__main__':
 		rows = int(input('rows'))
 		pattern=[]
 		row=0
+		c=[]
+		for x in range(cols+2):
+			c.append(0)
+		pattern.append(c)
+
+		print('enter 1 for live cells and zero for dead ones')
 		while(1):
 			inp = []
 			inp.append(0)
@@ -83,9 +90,13 @@ if __name__ == '__main__':
 				print('dim invalid, retry')
 			if(rows==row):
 				break
-
+		pattern.append(c)
+		print(pattern)
+		print('Press Ctrl+C to exit')
 		while(1):
 			time.sleep(speed)
 			pattern = apply_rules(pattern)
+			if(input()=='q'):
+				break
 	else:
 		unittest.main()
